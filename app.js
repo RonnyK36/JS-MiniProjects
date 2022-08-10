@@ -14,28 +14,42 @@
 // });
 
 
-//  Frequency Calculator
-const letterFrequency = (phrase) => {
+// //  Frequency Calculator
+// const letterFrequency = (phrase) => {
 
-    // create a freq object
-    let freq = {};
+//     // create a freq object
+//     let freq = {};
 
-    for (const letter of phrase) {
-        // does letter exist in freq?
-        if (letter in freq) {
-            freq[letter] += 1;
+//     for (const letter of phrase) {
+//         // does letter exist in freq?
+//         if (letter in freq) {
+//             freq[letter] += 1;
 
-        } else {
-            freq[letter] = 1
-        }
-        // increase value by 1
-        // set value to 1 if not
-        // console.log(letter);
+//         } else {
+//             freq[letter] = 1
+//         }
+//         // increase value by 1
+//         // set value to 1 if not
+//         // console.log(letter);
+
+//     }
+//     return freq;
+
+//     // console.log(phrase);
+// }
+
+// console.log(letterFrequency('Why is there a New Guy in town banaaaaa, kwanini'));
+
+//  sum numbers in an array
+const sumArrayNumbers = (numbers) => {
+    let result = 0;
+    for (const number of numbers) {
+        result += number;
 
     }
-    return freq;
+    return { result }
 
-    // console.log(phrase);
 }
+const nums = [1, 3, 5, 2, 345, 56, 7];
 
-console.log(letterFrequency('Why is there a New Guy in town banaaaaa, kwanini'));
+console.log(sumArrayNumbers(nums));
