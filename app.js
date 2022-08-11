@@ -55,21 +55,49 @@
 // console.log(sumArrayNumbers(nums));
 
 
-// Word Frequency in a Phrase
+// // Word Frequency in a Phrase
+// const wordFrequency = (phrase) => {
+//     wordArray = phrase.split(" ");
+//     console.log(wordArray);
+//     let frequency = {};
 
-const wordFrequency = (phrase) => {
-    wordArray = phrase.split(" ");
-    console.log(wordArray);
-    let frequency = {};
+//     for (const word of wordArray) {
+//         if (word in frequency) {
+//             frequency[word] += 1
+//         } else {
+//             frequency[word] = 1
+//         }
+//     }
 
-    for (const word of wordArray) {
-        if (word in frequency) {
-            frequency[word] += 1
-        } else {
-            frequency[word] = 1
-        }
-    }
+//     return frequency;
+// }
+// console.log(wordFrequency('Hii ni ya nini ni ya ninii ama ni ya nini'));
 
-    return frequency;
-}
-console.log(wordFrequency('Hii ni ya nini ni ya ninii ama ni ya nini'));
+
+// higher order functions => maps
+
+let result = [1, 2, 3, 4, 5, 6, 7].map(number =>
+    number * 2
+)
+console.log(result);
+
+// WORKING WITH FILTERS
+const students = [
+    { name: 'New Guy', grade: 40 },
+    { name: 'Kelvin', grade: 70 },
+    { name: 'Jenny', grade: 80 },
+    { name: 'Lexie', grade: 99 },
+]
+
+console.log(students.filter(student => student.grade > 70));
+
+// Use directly on DOM
+document.querySelector('.p-value').innerHTML = students.filter(student => student.grade > 70)[1].name;
+
+// Get all names
+let smartStudents = students.filter(child => child.grade > 70);
+// smartStudents.map(smartChild => smartChild.name)
+let list = smartStudents.map(smartChild => smartChild.name).join(", ");
+
+// Showing all meeting criteria
+document.querySelector(".p-value").innerHTML = list;
